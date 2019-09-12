@@ -19,4 +19,11 @@ public class ToDoListTest {
         todolist.add(todo);
         assertThat(todolist.todos,contains(todo));
     }
+
+    @Test
+    public void canDeleteFromList(){
+        ToDo todo = mock(ToDo.class);
+        todolist.delete(todo);
+        assertThat(todolist.todos,not(contains(todo)));
+    }
 }

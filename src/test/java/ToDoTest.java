@@ -1,26 +1,28 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
+
 public class ToDoTest {
     ToDo todo;
 
     @Before
     public void setup(){
-        todo = new ToDo();
+        todo = new ToDo(1,"Hello World", 1);
     }
+    @Test
+   public void canHaveAnID(){
+        assertEquals(todo.getid(),1);
 
-    @Test
-    public void create(){
-        todo = new ToDo();
     }
+    @Test
+    public void canHaveContent(){
+        assertEquals(todo.getContent(),"Hello World");
 
-    @Test
-    public void delete(){
-        todo = null;
     }
-    //AFTER DATABASE
     @Test
-    public void attachLabel(){
+    public void canHaveALabelID(){
+        assertEquals(todo.getLabelid(),1);
 
     }
 }
